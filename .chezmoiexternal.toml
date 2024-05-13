@@ -1,0 +1,30 @@
+[".zsh/plugins/highlighting"]
+    type = "archive"
+    url = "https://github.com/z-shell/F-Sy-H/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "720h"
+[".zsh/plugins/powerlevel10k"]
+    type = "archive"
+    url = "https://github.com/romkatv/powerlevel10k/archive/v1.20.0.tar.gz"
+    exact = true
+    stripComponents = 1
+[".zsh/plugins/auto-suggestions"]
+    type = "archive"
+    url = "https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "720h"
+[".zsh/plugins/auto-complete"]
+    type = "archive"
+    url = "https://github.com/marlonrichert/zsh-autocomplete/archive/23.07.13.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "720h"
+
+[".zsh/plugins/dirhistory.zsh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/dirhistory/dirhistory.plugin.zsh"
+[".zsh/plugins/jsontools.zsh"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/jsontools/jsontools.plugin.zsh"
