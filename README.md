@@ -22,3 +22,8 @@ there for the spacemen🧑‍🚀 to explore🪐☄️.
 ## Nvim screenshot
 
 ![Tanish.nvim](tanish-nvim.png)
+
+## TODO
+
+1. NVIM: mini.surround setup
+2. NVIM: support tex usage
