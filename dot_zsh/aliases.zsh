@@ -8,4 +8,4 @@ hash -d sem=$ONEDRIVE/Work/SFU/16\ -\ Summer\ 2024/
 alias ls='ls --color=auto'
 
 # Shortcut to edit nvim config directly
-alias nvimc='nvim ~/.config/nvim/'
+alias nvimc='nvim ~/.local/share/chezmoi/'
