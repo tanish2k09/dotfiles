@@ -1,5 +1,6 @@
 -- Neo-tree is a Neovim plugin to browse the file system
 -- https://github.com/nvim-neo-tree/neo-tree.nvim
+-- TODO: Add a command to set neo-tree root dir to nvim config dir from dashboard
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",
@@ -58,6 +59,7 @@ return {
 				conflict = "",
 			},
 		},
+		open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
 		filesystem = {
 			follow_current_file = { enabled = false },
 			use_libuv_file_watcher = true,
@@ -73,8 +75,24 @@ return {
 		window = {
 			mappings = {
 				["<space>"] = "",
+				["Y"] = {
+					function(state)
+						local node = state.tree:get_node()
+						local path = node:get_id()
+						vim.fn.setreg("+", path, "c")
+					end,
+					desc = "Copy Path to Clipboard",
+				},
+				["O"] = {
+					function(state)
+						require("lazy.util").open(state.tree:get_node().path, { system = true })
+					end,
+					desc = "Open with System Application",
+				},
 			},
 		},
+		-- Uncomment to use the dressing-nvim inputs instead of the popups
+		-- use_popups_for_input = false,
 		log_level = "info", -- "trace", "debug", "info", "warn", "error", "fatal"
 		log_to_file = false, -- true
 	},

@@ -11,6 +11,8 @@ return { -- Autocompletion
 		--  into multiple repos for maintenance purposes.
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-buffer",
+		-- "hrsh7th/cmp-cmdline",
 
 		-- Copilot source
 		"zbirenbaum/copilot-cmp",
@@ -93,6 +95,7 @@ return { -- Autocompletion
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+				{ name = "buffer" },
 			},
 			formatting = {
 				format = lspkind.cmp_format({
@@ -114,5 +117,28 @@ return { -- Autocompletion
 				}),
 			},
 		})
+
+		-- -- `/` cmdline setup.
+		-- cmp.setup.cmdline("/", {
+		-- 	mapping = cmp.mapping.preset.cmdline(),
+		-- 	sources = {
+		-- 		{ name = "buffer" },
+		-- 	},
+		-- })
+		--
+		-- -- `:` cmdline setup.
+		-- cmp.setup.cmdline(":", {
+		-- 	mapping = cmp.mapping.preset.cmdline(),
+		-- 	sources = cmp.config.sources({
+		-- 		{ name = "path" },
+		-- 	}, {
+		-- 		{
+		-- 			name = "cmdline",
+		-- 			option = {
+		-- 				ignore_cmds = { "Man", "!" },
+		-- 			},
+		-- 		},
+		-- 	}),
+		-- })
 	end,
 }
