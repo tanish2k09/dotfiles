@@ -1,5 +1,5 @@
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+-- Import some funcs used in keymaps like moving lines up and down
+local key_funcs = require("tanish.config.keymap_funcs")
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -35,10 +35,33 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- MacOS keybinds for the meta/alt key:
-vim.api.nvim_set_keymap("n", "´", "<M-e>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "∆", "<A-j>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "∆", "<A-j>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "∆", "<A-j>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "˚", "<A-k>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "˚", "<A-k>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "˚", "<A-k>", { noremap = true, silent = true })
+
+-- Resize window using <ctrl> arrow keys
+vim.api.nvim_set_keymap("n", "<M-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
+vim.api.nvim_set_keymap("n", "<M-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
+vim.api.nvim_set_keymap("n", "<M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+vim.api.nvim_set_keymap("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- Move Lines
+vim.keymap.set("n", "<A-j>", key_funcs.move_down_normal, { expr = true, noremap = true, desc = "Move Down" })
+vim.keymap.set("n", "<A-k>", key_funcs.move_up_normal, { expr = true, noremap = true, desc = "Move Up" })
+vim.keymap.set("i", "<A-j>", key_funcs.move_down_insert, { expr = true, noremap = true, desc = "Move Down" })
+vim.keymap.set("i", "<A-k>", key_funcs.move_up_insert, { expr = true, noremap = true, desc = "Move Up" })
+vim.keymap.set("v", "<A-j>", key_funcs.move_down_visual, { expr = true, noremap = true, desc = "Move Down" })
+vim.keymap.set("v", "<A-k>", key_funcs.move_up_visual, { expr = true, noremap = true, desc = "Move Up" })
 
 -- Keybind shortcut for lazy
 vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<CR>", { noremap = true, desc = "[L]aunch [L]azy" })
 
 -- Remap add marker keybind 'm' to 'gm' because of vim-easyclip
 vim.api.nvim_set_keymap("n", "gm", "m", { noremap = true, silent = false, desc = "Add marker" })
+
+-- Add undo stack break on insert for more precise control over the input text
+-- This is different from just using vim motions because we can undo to a DIFFERENT text
+vim.api.nvim_set_keymap("i", "<space>", "<space><C-g>u", { noremap = true, silent = true })
