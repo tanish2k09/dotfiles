@@ -13,9 +13,13 @@ return { -- Autocompletion
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
 		-- "hrsh7th/cmp-cmdline",
-
 		-- Copilot source
-		"zbirenbaum/copilot-cmp",
+		{
+			"zbirenbaum/copilot-cmp",
+			config = function()
+				require("copilot_cmp").setup()
+			end,
+		},
 
 		-- Add icons to the completion menu
 		"onsails/lspkind.nvim",
