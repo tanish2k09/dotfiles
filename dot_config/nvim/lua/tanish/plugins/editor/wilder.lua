@@ -1,3 +1,6 @@
+-- Provides autosuggestions while typing in cmdline
+-- Disabled in favor of Noice's cmdline with tab-complete
+
 return {
 	"gelguy/wilder.nvim",
 	opts = {
