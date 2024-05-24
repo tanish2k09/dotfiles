@@ -19,17 +19,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			-- For major updates, this must be adjusted manually.
 			version = "^1.0.0",
 		},
+		"ahmedkhalf/project.nvim",
+		"kdheepak/lazygit.nvim",
 	},
 	config = function()
 		require("telescope").setup({
-			-- You can put your default mappings / updates / etc. in here
-			--  All the info you're looking for is in `:help telescope.setup()`
-			--
-			-- defaults = {
-			--   mappings = {
-			--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-			--   },
-			-- },
 			pickers = {
 				colorscheme = {
 					enable_preview = true,
@@ -46,6 +40,8 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		pcall(require("telescope").load_extension, "live_grep_args")
 		pcall(require("telescope").load_extension, "fzf")
 		pcall(require("telescope").load_extension, "ui-select")
+		pcall(require("telescope").load_extension, "project")
+		pcall(require("telescope").load_extension, "lazygit")
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
