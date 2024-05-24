@@ -26,4 +26,3 @@ there for the spacemen🧑‍🚀 to explore🪐☄️.
 ## TODO
 
 1. NVIM: mini.surround setup
-2. NVIM: support tex usage
