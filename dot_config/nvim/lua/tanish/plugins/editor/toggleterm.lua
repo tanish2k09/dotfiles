@@ -3,7 +3,7 @@ return {
 	version = "*",
 	event = "VeryLazy",
 	opts = {
-		start_in_insert = false,
+		start_in_insert = true,
 		float_opts = {
 			border = "curved",
 		},
