@@ -45,8 +45,8 @@ vim.api.nvim_set_keymap("i", "˚", "<A-k>", { noremap = true, silent = true })
 -- Resize window using <ctrl> arrow keys
 vim.api.nvim_set_keymap("n", "<M-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 vim.api.nvim_set_keymap("n", "<M-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
-vim.api.nvim_set_keymap("n", "<M-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
-vim.api.nvim_set_keymap("n", "<M-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+vim.api.nvim_set_keymap("n", "<M-b>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+vim.api.nvim_set_keymap("n", "<M-f>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Move Lines
 vim.keymap.set("n", "<A-j>", key_funcs.move_down_normal, { expr = true, noremap = true, desc = "Move Down" })
