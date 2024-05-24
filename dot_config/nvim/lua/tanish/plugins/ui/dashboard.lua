@@ -31,16 +31,41 @@ return {
 			theme = "doom",
 			config = {
 				header = vim.split(personalized_header, "\n"), --your header
-				-- stylua: ignore
 				center = {
-				{ action = "Telescope find_files",                                 desc = " Find File",       icon = " ", key = "f" },
-				{ action = "ene | startinsert",                                        desc = " New File",        icon = " ", key = "n" },
-				{ action = "Telescope oldfiles",                                       desc = " Recent Files",    icon = " ", key = "r" },
-				{ action = [[lua require('telescope').extensions.live_grep_args.live_grep_args()]], desc = " Grep Text",       icon = "󱙓 ", key = "g" },
-				{ action = [[lua require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })]], desc = " Config",          icon = " ", key = "c" },
-				{ action = 'lua require("persistence").load()',                        desc = " Restore Session", icon = " ", key = "s" },
-				{ action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
-				{ action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
+					{
+						action = "Telescope projects",
+						desc = " Projects",
+						icon = " ",
+						key = "p",
+					},
+					{
+						action = "Telescope find_files",
+						desc = " Find File",
+						icon = " ",
+						key = "f",
+					},
+					{ action = "ene | startinsert", desc = " New File", icon = " ", key = "n" },
+					{ action = "Telescope oldfiles", desc = " Recent Files", icon = " ", key = "r" },
+					{
+						action = [[lua require('telescope').extensions.live_grep_args.live_grep_args()]],
+						desc = " Grep Text",
+						icon = "󱙓 ",
+						key = "g",
+					},
+					{
+						action = [[lua require("telescope.builtin").find_files({ cwd = vim.fn.stdpath("config") })]],
+						desc = " Config",
+						icon = " ",
+						key = "c",
+					},
+					{
+						action = 'lua require("persistence").load()',
+						desc = " Restore Session",
+						icon = " ",
+						key = "s",
+					},
+					{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
+					{ action = "qa", desc = " Quit", icon = " ", key = "q" },
 				},
 				footer = function()
 					local stats = require("lazy").stats()
