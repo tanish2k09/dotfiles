@@ -1,4 +1,5 @@
 -- Define your header and add some whitespace
+-- Dashboard seems to center the lines by default, so the beginning whitespace isn't necessary
 local personalized_header = [[
 ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 █░       ░░░░░░░░░░░░░░░░░░░░█
