@@ -25,4 +25,4 @@ there for the spacemen🧑‍🚀 to explore🪐☄️.
 
 ## TODO
 
-1. NVIM: mini.surround setup
+1. Look into autopair fastwrap and pair config for nvim
