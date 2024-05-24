@@ -13,21 +13,13 @@ return { -- Autocompletion
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-buffer",
 		-- "hrsh7th/cmp-cmdline",
-		-- Copilot source
-		{
-			"zbirenbaum/copilot-cmp",
-			config = function()
-				require("copilot_cmp").setup()
-			end,
-		},
+		"zbirenbaum/copilot-cmp",
 
 		-- Add icons to the completion menu
 		"onsails/lspkind.nvim",
 	},
 	config = function()
-		-- See `:help cmp`
 		local cmp = require("cmp")
-		-- local copilot_cmp = require("copilot_cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
@@ -43,8 +35,6 @@ return { -- Autocompletion
 
 			-- For an understanding of why these mappings were
 			-- chosen, you will need to read `:help ins-completion`
-			--
-			-- No, but seriously. Please read `:help ins-completion`, it is really good!
 			mapping = cmp.mapping.preset.insert({
 				-- Select the [n]ext item
 				["<C-n>"] = cmp.mapping.select_next_item(),
@@ -67,8 +57,6 @@ return { -- Autocompletion
 				--['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
 				-- Manually trigger a completion from nvim-cmp.
-				--  Generally you don't need this, because nvim-cmp will display
-				--  completions whenever it has completion options available.
 				["<C-y>"] = cmp.mapping.complete({}),
 
 				-- Think of <c-l> as moving to the right of your snippet expansion.
