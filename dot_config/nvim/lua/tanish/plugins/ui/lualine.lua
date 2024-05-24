@@ -54,10 +54,7 @@ return {
 	config = function(_, opts)
 		-- Trouble integration with lualine
 		local trouble = require("trouble")
-		if not trouble.statusline then
-			vim.notify("lualine trouble statusline not found")
-			return
-		else
+		if trouble.statusline then
 			local symbols = trouble.statusline({
 				mode = "lsp_document_symbols",
 				groups = {},
@@ -68,6 +65,15 @@ return {
 			table.insert(opts.sections.lualine_c, {
 				symbols.get,
 				cond = symbols.has,
+			})
+		end
+
+		local noice = require("noice")
+		if noice then
+			table.insert(opts.sections.lualine_x, {
+				noice.api.statusline.mode.get,
+				cond = noice.api.statusline.mode.has,
+				color = { fg = "#ff9e64" },
 			})
 		end
 
