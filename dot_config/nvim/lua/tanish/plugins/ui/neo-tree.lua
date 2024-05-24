@@ -12,7 +12,7 @@ return {
 	},
 	cmd = "Neotree",
 	keys = {
-		{ "\\", ":Neotree reveal<CR>", { desc = "NeoTree reveal" } },
+		{ "<leader>fe", ":Neotree reveal<CR>", { silent = true, desc = "[E]xplorer: NeoTree reveal" } },
 	},
 	init = function()
 		-- FIX: use `autocmd` for lazy-loading neo-tree instead of directly requiring it,
