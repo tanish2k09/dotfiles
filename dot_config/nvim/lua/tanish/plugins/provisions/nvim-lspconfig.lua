@@ -65,7 +65,7 @@ return { -- LSP Configuration & Plugins
 
 				-- Rename the variable under your cursor.
 				--  Most Language Servers support renaming across files, etc.
-				map("<leader>lr", vim.lsp.buf.rename, "[R]e[n]ame")
+				map("<leader>lr", vim.lsp.buf.rename, "[R]ename")
 
 				-- Execute a code action, usually your cursor needs to be on top of an error
 				-- or a suggestion from your LSP for this to activate.
@@ -122,6 +122,11 @@ return { -- LSP Configuration & Plugins
 		--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+		-- UFO code folding capabilities
+		capabilities.textDocument.foldingRange = {
+			dynamicRegistration = false,
+			lineFoldingOnly = true,
+		}
 
 		-- Enable the following language servers
 		--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -162,16 +167,9 @@ return { -- LSP Configuration & Plugins
 			},
 		}
 
-		-- Ensure the servers and tools above are installed
-		--  To check the current status of installed tools and/or manually install
-		--  other tools, you can run
-		--    :Mason
-		--
-		--  You can press `g?` for help in this menu.
+		-- Mason setup below here
 		require("mason").setup()
 
-		-- You can add other tools here that you want Mason to install
-		-- for you, so that they are available from within Neovim.
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua", -- Used to format Lua code
