@@ -41,8 +41,8 @@ return {
 		},
 		sections = {
 			lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-			lualine_b = { "filename", "branch" },
-			lualine_c = {},
+			lualine_b = { "filename", "branch", "diff" },
+			lualine_c = { "diagnostics" },
 			lualine_x = {},
 			lualine_y = { "filetype" },
 			lualine_z = {
@@ -52,22 +52,25 @@ return {
 	},
 	-- write a custom config function to add trouble status
 	config = function(_, opts)
+		-- Trouble integration with lualine
 		local trouble = require("trouble")
 		if not trouble.statusline then
+			vim.notify("lualine trouble statusline not found")
 			return
+		else
+			local symbols = trouble.statusline({
+				mode = "lsp_document_symbols",
+				groups = {},
+				title = false,
+				filter = { range = true },
+				format = "{kind_icon}{symbol.name:Normal}",
+			})
+			table.insert(opts.sections.lualine_c, {
+				symbols.get,
+				cond = symbols.has,
+			})
 		end
 
-		local symbols = trouble.statusline({
-			mode = "symbols",
-			groups = {},
-			title = false,
-			filter = { range = true },
-			format = "{kind_icon}{symbol.name:Normal}",
-		})
-		table.insert(opts.sections.lualine_c, {
-			symbols.get,
-			cond = symbols.has,
-		})
 		require("lualine").setup(opts)
 	end,
 }
