@@ -67,6 +67,8 @@ return { -- Autocompletion
 				--
 				-- <c-l> will move you to the right of each of the expansion locations.
 				-- <c-h> is similar, except moving you backwards.
+				-- NOTE: This shouldn't conflict with the window navigation keymaps
+				-- since we're in insert mode.
 				["<C-l>"] = cmp.mapping(function()
 					if luasnip.expand_or_locally_jumpable() then
 						luasnip.expand_or_jump()
