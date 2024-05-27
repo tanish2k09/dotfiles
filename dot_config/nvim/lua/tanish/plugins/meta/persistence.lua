@@ -8,4 +8,5 @@ return {
     { "<leader>sl", function() require("persistence").load({ last = true }) end, desc = "[S]ession Restore [L]ast" },
     { "<leader>sd", function() require("persistence").stop() end, desc = "[S]ession [D]on't Save" },
   },
+	enabled = false,
 }

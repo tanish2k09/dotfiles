@@ -59,7 +59,7 @@ return {
 						key = "c",
 					},
 					{
-						action = 'lua require("persistence").load()',
+						action = "SearchSession",
 						desc = " Restore Session",
 						icon = " ",
 						key = "s",
