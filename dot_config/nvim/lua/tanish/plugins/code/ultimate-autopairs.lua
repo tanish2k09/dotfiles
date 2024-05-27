@@ -7,5 +7,5 @@ return {
 		-- TODO: Fix the closing bracket removal behaviour
 	},
 	-- disable this for now until further development
-	enabled = false,
+	enabled = true,
 }
