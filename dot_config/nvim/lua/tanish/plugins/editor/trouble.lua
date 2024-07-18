@@ -1,6 +1,6 @@
 return {
 	"folke/trouble.nvim",
-	branch = "dev",
+	cmd = "Trouble",
 	keys = {
 		{ "<leader>tx", "<cmd>Trouble diagnostics toggle<cr>", desc = "[T]rouble Diagnostics " },
 		{ "<leader>tX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", desc = "[T]rouble buffer Diagnostics" },
