@@ -13,7 +13,7 @@ return {
 		},
 	},
 	keys = {
-		{ "<C-/>", "<cmd>ToggleTerm direction='float'<CR>", desc = "Toggle floating terminal" },
+		{ "<C-\\>", "<cmd>ToggleTerm direction='float'<CR>", desc = "Toggle floating terminal" },
 		{ "<leader>tf", "<cmd>ToggleTerm direction='float'<CR>", desc = "[T]erminal: [F]loating" },
 		{ "<leader>tt", "<cmd>ToggleTerm direction='horizontal'<CR>", desc = "[T]erminal: [T]oggle Window" },
 	},
