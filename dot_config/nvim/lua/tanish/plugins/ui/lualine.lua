@@ -40,13 +40,13 @@ return {
 			component_separators = "",
 		},
 		sections = {
-			lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+			lualine_a = { { "mode" } },
 			lualine_b = { "filename", "branch", "diff" },
 			lualine_c = { "diagnostics" },
 			lualine_x = {},
 			lualine_y = { "filetype" },
 			lualine_z = {
-				{ "location", separator = { right = "" }, left_padding = 2 },
+				{ "location" },
 			},
 		},
 	},
