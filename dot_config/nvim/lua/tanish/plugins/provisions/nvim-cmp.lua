@@ -89,6 +89,7 @@ return { -- Autocompletion
 				{ name = "copilot" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
+				{ name = "tailwindcss" },
 				{ name = "path" },
 				{ name = "buffer" },
 			},
