@@ -43,7 +43,7 @@ return {
 			lualine_a = { { "mode" } },
 			lualine_b = { "filename", "branch", "diff" },
 			lualine_c = { "diagnostics" },
-			lualine_x = {},
+			lualine_x = { "copilot" },
 			lualine_y = { "filetype" },
 			lualine_z = {
 				{ "location" },
@@ -68,6 +68,7 @@ return {
 			})
 		end
 
+		-- Show recording status in lualine
 		local noice = require("noice")
 		if noice then
 			table.insert(opts.sections.lualine_x, {
@@ -76,6 +77,9 @@ return {
 				color = { fg = "#ff9e64" },
 			})
 		end
+
+		-- Show copiliot status in lualine
+		-- This is done in copilot-lualine
 
 		require("lualine").setup(opts)
 	end,
