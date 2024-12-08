@@ -43,8 +43,8 @@ return {
 			lualine_a = { { "mode" } },
 			lualine_b = { "filename", "branch", "diff" },
 			lualine_c = { "diagnostics" },
-			lualine_x = { "copilot" },
-			lualine_y = { "filetype" },
+			lualine_x = {},
+			lualine_y = { "copilot" },
 			lualine_z = {
 				{ "location" },
 			},
