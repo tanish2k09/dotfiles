@@ -9,6 +9,7 @@ fi
 # End of lines configured by zsh-newuser-install
 ZSHXT=~/.zsh
 source $ZSHXT/aliases.zsh
+source $ZSHXT/work_aliases.zsh
 source $ZSHXT/paths.zsh
 source $ZSHXT/opts.zsh
 source $ZSHXT/plugins.zsh
