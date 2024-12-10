@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<true/>
 	<key>BracketedPasteMode</key>
 	<true/>
 	<key>ConvertDosNewlines</key>
@@ -3135,6 +3137,19 @@
 					<key>Text</key>
 					<string>0x1</string>
 				</dict>
+				<key>0xf702-0x380000-0x7b</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>02 70</string>
+					<key>Version</key>
+					<integer>2</integer>
+				</dict>
 				<key>0xf703-0x220000</key>
 				<dict>
 					<key>Action</key>
@@ -3169,6 +3184,19 @@
 					<integer>11</integer>
 					<key>Text</key>
 					<string>0x5</string>
+				</dict>
+				<key>0xf703-0x380000-0x7c</key>
+				<dict>
+					<key>Action</key>
+					<integer>11</integer>
+					<key>Apply Mode</key>
+					<integer>0</integer>
+					<key>Escaping</key>
+					<integer>2</integer>
+					<key>Text</key>
+					<string>02 6E</string>
+					<key>Version</key>
+					<integer>2</integer>
 				</dict>
 				<key>0xf704-0x20000</key>
 				<dict>
@@ -3767,7 +3795,7 @@
 	<key>SeparateWindowTitlePerTab</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>ShowLocationsInScrollbar</key>
 	<false/>
 	<key>ShowNewOutputIndicator</key>
