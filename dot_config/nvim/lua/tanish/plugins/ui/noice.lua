@@ -25,6 +25,14 @@ return {
 				},
 				view = "mini",
 			},
+			-- ignore the "No information available" notifications on LSP hover trigger
+			{
+				filter = {
+					event = "notify",
+					find = "No information available",
+				},
+				opts = { skip = true },
+			},
 		},
 		presets = {
 			bottom_search = true,
