@@ -5,12 +5,57 @@
 -- stylua: ignore
 local colors = {
   blue   = '#80a0ff',
-  cyan   = '#79dac8',
   black  = '#080808',
   white  = '#c6c6c6',
-  red    = '#ff5189',
   violet = '#d183e8',
   grey   = '#303030',
+  space0       = "#100e23",
+  spacebg0      = "#19172B",
+  spacebg1	= "#2D2B3E",
+  space1       = "#1e1c31",
+  space2       = "#2d2b40",
+  space3       = "#3e3859",
+  space4       = "#585273",
+  astral1      = "#cbe3e7",
+  cyan         = "#aaffe4",
+  darkcyan     = "#63f2f1",
+  yellow       = "#ffe9aa",
+  darkyellow   = "#ffb378",
+  red          = "#f48fb1",
+  darkred      = "#ff5458",
+  green        = "#a1efd3",
+  darkgreen    = "#62d196",
+  purple       = "#d4bfff",
+  nebula10     = "#78A8ff",
+  nebula11     = "#7676ff",
+}
+
+local custom_embark = {
+	normal = {
+		a = { fg = colors.space3, bg = colors.space0, gui = "bold" },
+		b = { fg = colors.space4, bg = colors.spacebg0 },
+		c = { fg = colors.space4, bg = colors.space1 },
+		x = { fg = colors.yellow, bg = colors.space1 },
+		y = { fg = colors.space2, bg = colors.spacebg0 },
+	},
+	visual = {
+		a = { fg = colors.nebula10, bg = colors.spacebg0, gui = "bold" },
+	},
+	command = {
+		a = { fg = colors.red, bg = colors.spacebg0, gui = "bold" },
+	},
+	insert = {
+		a = { fg = colors.green, bg = colors.spacebg0, gui = "bold" },
+	},
+	replace = {
+		a = { fg = colors.darkgreen, bg = colors.spacebg0, gui = "bold" },
+	},
+	inactive = {
+		a = { fg = colors.space4, bg = colors.space1, gui = "bold" },
+		b = { fg = colors.space4, bg = colors.space1 },
+		c = { fg = colors.space4, bg = colors.space2 },
+		x = { fg = colors.space0, bg = colors.purple },
+	},
 }
 
 return {
@@ -19,32 +64,20 @@ return {
 	opts = {
 		options = {
 			globalstatus = true,
-			theme = "auto",
-			-- {
-			-- normal = {
-			-- 	a = { fg = colors.black, bg = colors.violet },
-			-- 	b = { fg = colors.white, bg = colors.grey },
-			-- 	c = { fg = colors.white },
-			-- },
-			--
-			-- insert = { a = { fg = colors.black, bg = colors.blue } },
-			-- visual = { a = { fg = colors.black, bg = colors.cyan } },
-			-- replace = { a = { fg = colors.black, bg = colors.red } },
-			--
-			-- inactive = {
-			-- 	a = { fg = colors.white, bg = colors.black },
-			-- 	b = { fg = colors.white, bg = colors.black },
-			-- 	c = { fg = colors.white },
-			-- },
-			-- },
+			always_divide_middle = false,
+			theme = custom_embark,
 			section_separators = { left = "", right = "" },
-			component_separators = "",
+			component_separators = " ",
 		},
 		sections = {
 			lualine_a = { { "mode" } },
-			lualine_b = { "filename", "branch", "diff" },
+			lualine_b = {
+				{ "filename", icon = "" },
+				{ "branch", icon = "󰊢" },
+				"diff",
+			},
 			lualine_c = {},
-			lualine_x = { "diagnostics" },
+			lualine_x = {},
 			lualine_y = { "copilot" },
 			lualine_z = {
 				{ "location" },
