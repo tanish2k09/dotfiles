@@ -2739,13 +2739,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.15145954489707947</real>
+				<real>0.11145768314599991</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.068640671670436859</real>
+				<real>0.046880669891834259</real>
 				<key>Red Component</key>
-				<real>0.072551213204860687</real>
+				<real>0.049474284052848816</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -2813,13 +2813,13 @@
 				<key>Alpha Component</key>
 				<real>0.25</real>
 				<key>Blue Component</key>
-				<real>1</real>
+				<real>0.33265838027000427</real>
 				<key>Color Space</key>
-				<string>sRGB</string>
+				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.92681378126144409</real>
+				<real>0.25220176577568054</real>
 				<key>Red Component</key>
-				<real>0.70214027166366577</real>
+				<real>0.11608987301588058</real>
 			</dict>
 			<key>Cursor Text Color</key>
 			<dict>
@@ -3109,7 +3109,7 @@
 				<real>1</real>
 			</dict>
 			<key>Minimum Contrast</key>
-			<real>0.10000000000000001</real>
+			<real>0.0</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -3156,13 +3156,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.74771922826766968</real>
+				<real>0.67595702409744263</real>
 				<key>Color Space</key>
 				<string>P3</string>
 				<key>Green Component</key>
-				<real>0.4929766058921814</real>
+				<real>0.4212113618850708</real>
 				<key>Red Component</key>
-				<real>0.2961021363735199</real>
+				<real>0.26933711767196655</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
