@@ -207,96 +207,102 @@ return { -- LSP Configuration & Plugins
 				},
 			},
 			ts_ls = {
-				-- explicitly add default filetypes, so that we can extend
-				-- them in related extras
-				filetypes = {
-					"javascript",
-					"javascriptreact",
-					"javascript.jsx",
-					"typescript",
-					"typescriptreact",
-					"typescript.tsx",
-				},
-				settings = {
-					complete_function_calls = true,
-					ts_ls = {
-						enableMoveToFileCodeAction = true,
-						autoUseWorkspaceTsdk = true,
-						experimental = {
-							maxInlayHintLength = 30,
-							completion = {
-								enableServerSideFuzzyMatch = true,
-							},
-						},
-					},
-					typescript = {
-						updateImportsOnFileMove = { enabled = "always" },
-						suggest = {
-							completeFunctionCalls = true,
-						},
-						inlayHints = {
-							enumMemberValues = { enabled = true },
-							functionLikeReturnTypes = { enabled = true },
-							parameterNames = { enabled = "literals" },
-							parameterTypes = { enabled = true },
-							propertyDeclarationTypes = { enabled = true },
-							variableTypes = { enabled = false },
-						},
-					},
-				},
-				keys = {
-					{
-						"gD",
-						function()
-							local params = vim.lsp.util.make_position_params()
-							LspUtils.execute({
-								command = "typescript.goToSourceDefinition",
-								arguments = { params.textDocument.uri, params.position },
-								open = true,
-							})
-						end,
-						desc = "Goto Source Definition",
-					},
-					{
-						"gR",
-						function()
-							LspUtils.execute({
-								command = "typescript.findAllFileReferences",
-								arguments = { vim.uri_from_bufnr(0) },
-								open = true,
-							})
-						end,
-						desc = "File References",
-					},
-					{
-						"<leader>co",
-						LspUtils.codeAction["source.organizeImports"],
-						desc = "Organize Imports",
-					},
-					{
-						"<leader>cM",
-						LspUtils.codeAction["source.addMissingImports.ts"],
-						desc = "Add missing imports",
-					},
-					{
-						"<leader>cu",
-						LspUtils.codeAction["source.removeUnused.ts"],
-						desc = "Remove unused imports",
-					},
-					{
-						"<leader>cD",
-						LspUtils.codeAction["source.fixAll.ts"],
-						desc = "Fix all diagnostics",
-					},
-					{
-						"<leader>cV",
-						function()
-							LspUtils.execute({ command = "typescript.selectTypeScriptVersion" })
-						end,
-						desc = "Select TS workspace version",
-					},
-				},
+				enabled = false,
 			},
+			vtsls = {
+				enabled = false,
+			},
+			-- vtsls = {
+			-- 	-- explicitly add default filetypes, so that we can extend
+			-- 	-- them in related extras
+			-- 	filetypes = {
+			-- 		"javascript",
+			-- 		"javascriptreact",
+			-- 		"javascript.jsx",
+			-- 		"typescript",
+			-- 		"typescriptreact",
+			-- 		"typescript.tsx",
+			-- 	},
+			-- 	settings = {
+			-- 		complete_function_calls = true,
+			-- 		ts_ls = {
+			-- 			enableMoveToFileCodeAction = true,
+			-- 			autoUseWorkspaceTsdk = true,
+			-- 			experimental = {
+			-- 				maxInlayHintLength = 30,
+			-- 				completion = {
+			-- 					enableServerSideFuzzyMatch = true,
+			-- 				},
+			-- 			},
+			-- 		},
+			-- 		typescript = {
+			-- 			updateImportsOnFileMove = { enabled = "always" },
+			-- 			suggest = {
+			-- 				completeFunctionCalls = true,
+			-- 			},
+			-- 			inlayHints = {
+			-- 				enumMemberValues = { enabled = true },
+			-- 				functionLikeReturnTypes = { enabled = true },
+			-- 				parameterNames = { enabled = "literals" },
+			-- 				parameterTypes = { enabled = true },
+			-- 				propertyDeclarationTypes = { enabled = true },
+			-- 				variableTypes = { enabled = false },
+			-- 			},
+			-- 		},
+			-- 	},
+			-- 	keys = {
+			-- 		{
+			-- 			"gD",
+			-- 			function()
+			-- 				local params = vim.lsp.util.make_position_params()
+			-- 				LspUtils.execute({
+			-- 					command = "typescript.goToSourceDefinition",
+			-- 					arguments = { params.textDocument.uri, params.position },
+			-- 					open = true,
+			-- 				})
+			-- 			end,
+			-- 			desc = "Goto Source Definition",
+			-- 		},
+			-- 		{
+			-- 			"gR",
+			-- 			function()
+			-- 				LspUtils.execute({
+			-- 					command = "typescript.findAllFileReferences",
+			-- 					arguments = { vim.uri_from_bufnr(0) },
+			-- 					open = true,
+			-- 				})
+			-- 			end,
+			-- 			desc = "File References",
+			-- 		},
+			-- 		{
+			-- 			"<leader>co",
+			-- 			LspUtils.codeAction["source.organizeImports"],
+			-- 			desc = "Organize Imports",
+			-- 		},
+			-- 		{
+			-- 			"<leader>cM",
+			-- 			LspUtils.codeAction["source.addMissingImports.ts"],
+			-- 			desc = "Add missing imports",
+			-- 		},
+			-- 		{
+			-- 			"<leader>cu",
+			-- 			LspUtils.codeAction["source.removeUnused.ts"],
+			-- 			desc = "Remove unused imports",
+			-- 		},
+			-- 		{
+			-- 			"<leader>cD",
+			-- 			LspUtils.codeAction["source.fixAll.ts"],
+			-- 			desc = "Fix all diagnostics",
+			-- 		},
+			-- 		{
+			-- 			"<leader>cV",
+			-- 			function()
+			-- 				LspUtils.execute({ command = "typescript.selectTypeScriptVersion" })
+			-- 			end,
+			-- 			desc = "Select TS workspace version",
+			-- 		},
+			-- 	},
+			-- },
 		}
 
 		-- Mason setup below here
