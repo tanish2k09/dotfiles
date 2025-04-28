@@ -43,15 +43,16 @@ return {
 		sections = {
 			lualine_a = { { "mode" } },
 			lualine_b = { "filename", "branch", "diff" },
-			lualine_c = { "diagnostics" },
-			lualine_x = {},
+			lualine_c = {},
+			lualine_x = { "diagnostics" },
 			lualine_y = { "copilot" },
 			lualine_z = {
 				{ "location" },
 			},
 		},
 	},
-	-- write a custom config function to add trouble status
+
+	-- NOTE: Trouble LSP symbol integration
 	config = function(_, opts)
 		-- Trouble integration with lualine
 		local trouble = require("trouble")
