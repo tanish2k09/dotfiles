@@ -37,6 +37,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			file_ignore_patterns = {
 				"node_modules",
 			},
+			defaults = {
+				preview = {
+					filesize_limit = 0.5,
+				},
+			},
 		})
 
 		-- Enable Telescope extensions if they are installed
