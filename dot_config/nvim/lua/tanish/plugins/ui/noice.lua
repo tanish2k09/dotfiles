@@ -56,7 +56,8 @@ return {
     { "<leader>una", function() require("noice").cmd("all") end, desc = "Noice All" },
     { "<leader>und", function() require("noice").cmd("dismiss") end, desc = "Dismiss All" },
     { "<leader>unt", function() require("noice").cmd("telescope") end, desc = "Noice Telescope" },
-    { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
-    { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
+		-- These don't really work on macos
+    -- { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true, expr = true, desc = "Scroll Forward", mode = {"i", "n", "s"} },
+    -- { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true, expr = true, desc = "Scroll Backward", mode = {"i", "n", "s"}},
   },
 }
