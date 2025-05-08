@@ -3,7 +3,7 @@ return {
 	"ahmedkhalf/project.nvim",
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "[P]rojects" },
+		{ "<leader>fp", "<Cmd>Telescope projects<CR>", desc = "[F]ind [P]rojects" },
 	},
 	config = function()
 		require("project_nvim").setup({
