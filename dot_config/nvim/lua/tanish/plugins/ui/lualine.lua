@@ -32,11 +32,11 @@ local colors = {
 
 local custom_embark = {
 	normal = {
-		a = { fg = colors.space3, bg = colors.space0, gui = "bold" },
+		a = { fg = colors.space4, bg = colors.space0, gui = "bold" },
 		b = { fg = colors.space4, bg = colors.spacebg0 },
 		c = { fg = colors.space4, bg = colors.space1 },
 		x = { fg = colors.yellow, bg = colors.space1 },
-		y = { fg = colors.space2, bg = colors.spacebg0 },
+		y = { fg = colors.space4, bg = colors.spacebg0 },
 	},
 	visual = {
 		a = { fg = colors.nebula10, bg = colors.spacebg0, gui = "bold" },
@@ -54,7 +54,7 @@ local custom_embark = {
 		a = { fg = colors.space4, bg = colors.space1, gui = "bold" },
 		b = { fg = colors.space4, bg = colors.space1 },
 		c = { fg = colors.space4, bg = colors.space2 },
-		x = { fg = colors.space0, bg = colors.purple },
+		x = { fg = colors.space4, bg = colors.space1 },
 	},
 }
 
@@ -64,9 +64,9 @@ return {
 	opts = {
 		options = {
 			globalstatus = true,
-			always_divide_middle = false,
+			always_divide_middle = true,
 			theme = custom_embark,
-			section_separators = { left = "", right = "" },
+			section_separators = { left = "", right = "" },
 			component_separators = " ",
 		},
 		sections = {
@@ -78,7 +78,7 @@ return {
 			},
 			lualine_c = {},
 			lualine_x = {},
-			lualine_y = { "copilot" },
+			lualine_y = { "lsp_status" },
 			lualine_z = {
 				{ "location" },
 			},
