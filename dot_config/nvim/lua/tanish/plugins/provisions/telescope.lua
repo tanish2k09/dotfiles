@@ -41,6 +41,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				preview = {
 					filesize_limit = 0.5,
 				},
+				path_display = { "smart" },
 			},
 		})
 
@@ -61,6 +62,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 		-- vim.keymap.set("n", "<leader>f/", builtin.live_grep, { desc = "[F]ind [/] by grep" })
 		vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "[F]ind [D]iagnostics" })
 		vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "[F]ind [R]esume" })
+		vim.keymap.set("n", "<leader>fq", builtin.quickfix, { desc = "[F]ind [Q]uickfix" })
+		vim.keymap.set("n", "<leader>ft", builtin.colorscheme, { desc = "[F]ind [T]heme" })
+		vim.keymap.set("n", "<leader>fg", builtin.lsp_document_symbols, { desc = "[F]ind Document Symbols" })
 		vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 		vim.keymap.set(
